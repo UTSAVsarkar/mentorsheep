@@ -1,5 +1,11 @@
 import React, {useRef, useState, useEffect} from 'react';
 import MentorSheepLogo from './images/MentorSheep.svg';
+import {About} from "./components/About/About.tsx";
+import {Articles} from "./components/Articles/Articles.tsx";
+import {People} from "./components/People/People.tsx";
+import {Testimonials} from "./components/Testimonials/Testimonials.tsx";
+import {Connect} from "./components/Connect/Connect.tsx";
+import './App.css'
 
 const center: React.CSSProperties = {
     width: '100%',
@@ -64,91 +70,55 @@ function App() {
         };
     }, []);
 
-    const renderHeader = (): JSX.Element => {
+
+    const renderHeader = () => {
         return (
-            <header
-                style={{
-                    position: 'sticky',
-                    top: 0,
-                    backgroundColor: 'white',
-                    zIndex: 1000,
-                    padding: '10px 20px',
-                    boxShadow: '0 2px 5px rgba(0, 0, 0, 0.1)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                }}
-            >
-
-                <div style={{display: 'flex', alignItems: 'center'}}>
-                    <img
-                        src={MentorSheepLogo}
-                        alt="Company Logo"
-                        style={{width: 40, height: 40, marginRight: 10}}
-                    />
-                    <span style={{fontSize: 20, fontWeight: 'bold'}}>MentorSheep</span>
-                </div>
-
-                <ul
-                    style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'space-evenly',
-                        cursor: 'pointer',
-                        margin: 0,
-                        padding: 0,
-                        listStyle: 'none',
-                    }}
-                >
-                    <li
-                        onClick={() => scrollHandler(about)}
-                        style={{
-                            margin: '0 15px',
-                            textDecoration: activeSection === 'about' ? 'underline' : 'none',
-                        }}
-                    >
-                        About
-                    </li>
-                    <li
-                        onClick={() => scrollHandler(people)}
-                        style={{
-                            margin: '0 15px',
-                            textDecoration: activeSection === 'people' ? 'underline' : 'none',
-                        }}
-                    >
-                        People
-                    </li>
-                    <li
-                        onClick={() => scrollHandler(testimonialsL)}
-                        style={{
-                            margin: '0 15px',
-                            textDecoration: activeSection === 'testimonials' ? 'underline' : 'none',
-                        }}
-                    >
-                        Testimonials
-                    </li>
-                    <li
-                        onClick={() => scrollHandler(articles)}
-                        style={{
-                            margin: '0 15px',
-                            textDecoration: activeSection === 'articles' ? 'underline' : 'none',
-                        }}
-                    >
-                        Articles
-                    </li>
-                    <li
-                        onClick={() => scrollHandler(connect)}
-                        style={{
-                            margin: '0 15px',
-                            textDecoration: activeSection === 'connect' ? 'underline' : 'none',
-                        }}
-                    >
-                        Connect
-                    </li>
-                </ul>
-            </header>
-        );
-    };
+            <>
+                <nav style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+                    <label className="logo">
+                        <img
+                            src={MentorSheepLogo}
+                            alt="Company Logo"
+                            style={{width: 80, height: 80, marginRight: 10}}
+                        />
+                        <span style={{fontSize: 30}}>MentorSheep</span>
+                    </label>
+                    <input type="checkbox" id="check"/>
+                    <label htmlFor="check" className="checkbtn">
+                        <i className="fas fa-bars"></i>
+                    </label>
+                    <ul>
+                        <li onClick={() => scrollHandler(about)}>
+                            <a className={activeSection === 'about' ? 'active' : ''}>
+                                About
+                            </a>
+                        </li>
+                        <li onClick={() => scrollHandler(people)}>
+                            <a className={activeSection === 'people' ? 'active' : ''}>
+                                People
+                            </a>
+                        </li>
+                        <li onClick={() => scrollHandler(testimonialsL)}>
+                            <a className={activeSection === 'testimonials' ? 'active' : ''}>
+                                Testimonials
+                            </a>
+                        </li>
+                        <li onClick={() => scrollHandler(articles)}>
+                            <a className={activeSection === 'articles' ? 'active' : ''}>
+                                Articles
+                            </a>
+                        </li>
+                        <li onClick={() => scrollHandler(connect)}>
+                            <a className={activeSection === 'connect' ? 'active' : ''}>
+                                Connect
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <section></section>
+            </>
+        )
+    }
 
     return (
         <div>
@@ -161,7 +131,7 @@ function App() {
                     ...center,
                 }}
             >
-                About
+                <About/>
             </div>
             <div
                 ref={people}
@@ -170,7 +140,7 @@ function App() {
                     ...center,
                 }}
             >
-                People
+                <People/>
             </div>
             <div
                 ref={testimonialsL}
@@ -179,7 +149,7 @@ function App() {
                     ...center,
                 }}
             >
-                Testimonials
+                <Testimonials/>
             </div>
             <div
                 ref={articles}
@@ -188,7 +158,7 @@ function App() {
                     ...center,
                 }}
             >
-                Articles
+                <Articles/>
             </div>
             <div
                 ref={connect}
@@ -197,7 +167,7 @@ function App() {
                     ...center,
                 }}
             >
-                Connect
+                <Connect/>
             </div>
         </div>
     );
