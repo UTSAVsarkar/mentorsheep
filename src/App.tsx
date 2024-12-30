@@ -79,9 +79,8 @@ function App() {
                         <img
                             src={MentorSheepLogo}
                             alt="Company Logo"
-                            style={{width: 80, height: 80, marginRight: 10}}
                         />
-                        <span style={{fontSize: 30}}>MentorSheep</span>
+                        <span>MentorSheep</span>
                     </label>
                     <input type="checkbox" id="check"/>
                     <label htmlFor="check" className="checkbtn">
