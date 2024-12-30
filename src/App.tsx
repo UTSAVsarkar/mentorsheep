@@ -75,7 +75,7 @@ function App() {
         return (
             <>
                 <nav style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
-                    <label className="logo">
+                    <label className="logo" onClick={()=>scrollHandler(about)}>
                         <img
                             src={MentorSheepLogo}
                             alt="Company Logo"
@@ -126,11 +126,10 @@ function App() {
             <div
                 ref={about}
                 style={{
-                    background: 'grey',
                     ...center,
                 }}
             >
-                <About/>
+                <About scrollHandler={scrollHandler} connect={connect}/>
             </div>
             <div
                 ref={people}

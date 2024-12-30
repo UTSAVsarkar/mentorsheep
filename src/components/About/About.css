@@ -1,0 +1,40 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.header-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.card-div {
+    background: #83d283;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    color: black;
+}
+
+.register-button {
+    margin-top: 2rem;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Responsive media query code for small screen */
+@media (max-width: 650px) {
+    .container{
+        font-size: 18px;
+    }
+}
