@@ -67,7 +67,7 @@
     }
 }
 
-@media (max-width: 300px) {
+@media (max-width: 150px) {
     .glass-div {
         width: 100%;
     }

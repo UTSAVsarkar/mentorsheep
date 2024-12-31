@@ -48,9 +48,9 @@ export const About = ({scrollHandler, connect}: AboutProps) => {
                     viewport={{once: false, amount: 0.7}}
                 >
                     <Stack direction="row" spacing={1} className="stack">
-                        <Chip icon={<SchoolIcon/>} label="Guidance" color="success" className="chip" />
+                        <Chip icon={<SchoolIcon className="icon"/>} label="AID" color="success" className="chip" />
                         <Chip icon={<ChildCareIcon/>} label="CARE" color="success" className="chip" />
-                        <Chip icon={<ForkRightIcon/>} label="POSSIBILITY" color="success" className="chip" />
+                        <Chip icon={<ForkRightIcon/>} label="OPTIONS" color="success" className="chip" />
                     </Stack>
                 </motion.div>
 
