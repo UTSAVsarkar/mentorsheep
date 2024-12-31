@@ -74,7 +74,7 @@ function App() {
     const renderHeader = () => {
         return (
             <>
-                <nav style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+                <nav style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', zIndex: 100}}>
                     <label className="logo" onClick={()=>scrollHandler(about)}>
                         <img
                             src={MentorSheepLogo}
@@ -134,7 +134,6 @@ function App() {
             <div
                 ref={people}
                 style={{
-                    background: 'blue',
                     ...center,
                 }}
             >

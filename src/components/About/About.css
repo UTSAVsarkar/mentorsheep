@@ -2,8 +2,40 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-align: center;
+    background-image: url('src/images/Main page.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px;
 }
+
+.stack{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.chip {
+    background: #008080 !important;
+}
+
+.glass-div {
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+    backdrop-filter: blur(30px); /* Blurring the background */
+    -webkit-backdrop-filter: blur(10px); /* For Safari support */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Optional border for definition */
+    border-radius: 12px; /* Rounded corners */
+    padding: 40px; /* Space inside the div */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: 85%; /* Adjust width as needed */
+    margin: 20px auto; /* Center align the div */
+    color: white; /* Ensure text is readable on the transparent background */
+}
+
 
 .header-div {
     display: flex;
@@ -11,14 +43,6 @@
     justify-content: center;
     gap: 1rem;
     margin-top: 1rem;
-}
-
-.card-div {
-    background: #83d283;
-    padding: 1rem;
-    border-radius: 8px;
-    text-align: center;
-    color: black;
 }
 
 .register-button {
@@ -32,9 +56,19 @@
     cursor: pointer;
 }
 
+.subheader {
+    font-size: 20px;
+}
+
 /* Responsive media query code for small screen */
 @media (max-width: 650px) {
     .container{
         font-size: 18px;
+    }
+}
+
+@media (max-width: 300px) {
+    .glass-div {
+        width: 100%;
     }
 }
