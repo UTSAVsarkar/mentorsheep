@@ -160,7 +160,6 @@ function App() {
             <div
                 ref={connect}
                 style={{
-                    background: 'orange',
                     ...center,
                 }}
             >
